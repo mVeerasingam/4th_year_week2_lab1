@@ -9,6 +9,7 @@ public class Week2Refresher {
         return "Hello";
     }
 
+
     @GetMapping("/hello/{name}")
     public String myName(@PathVariable String name){
         return "Your name is " + name;
