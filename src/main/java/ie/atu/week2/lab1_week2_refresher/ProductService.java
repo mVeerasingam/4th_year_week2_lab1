@@ -41,4 +41,7 @@ public class ProductService {
         return productInterface.save(product);
     }
 
+    public void deleteProduct(Long id) {
+        productInterface.deleteById(id);
+    }
 }
