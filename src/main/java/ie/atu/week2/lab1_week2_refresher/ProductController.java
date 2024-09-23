@@ -23,4 +23,5 @@ public class ProductController {
     public Product addProduct(@Valid @RequestBody Product product){
         return productService.addProduct(product);
     }
+
 }
