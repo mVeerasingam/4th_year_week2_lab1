@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
+
 @RestController
 public class ProductController {
     private ProductService productService;
@@ -24,5 +26,9 @@ public class ProductController {
         return productService.addProduct(product);
     }
 
-    
+    // update products by id
+    @PutMapping("/updateProducts/{id}")
+    public Product updateProduct(@PathVariable Long id, @Valid @RequestBody Product updatedProduct) {
+        return productService.updateProduct(id, updatedProduct);
+    }
 }
