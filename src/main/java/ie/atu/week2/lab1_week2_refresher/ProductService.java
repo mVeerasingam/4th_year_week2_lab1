@@ -9,21 +9,18 @@ import java.util.List;
 @Service
 public class ProductService {
     private ProductInterface productInterface;
-    private List<Product> productList = new ArrayList<>();
     @Autowired
     public ProductService(ProductInterface productInterface) {
         this.productInterface = productInterface;
     }
 
     // find all products by using the ProductDataAccess interface
-    public List<Product> getProductList(){
-        productList = productInterface.findAll();
-        return productList;
+    public List<Product> getProductList() {
+        return productInterface.findAll();
     }
 
-    // add product + save it to the mockup db
+    // add product + save it to the embedded db
     public Product addProduct(Product product) {
-        productList.add(product);
         return productInterface.save(product);
     }
 
